@@ -22,6 +22,16 @@
 - `data/project-profile.md`
 
 ## Fluxo de Inicialização
+
+### Opção C – Simular perguntas técnicas (Coach)
+1. Despache o Coach via `spawn_agent` (Despacho 1) → exiba a primeira pergunta → aguarde resposta do usuário.
+2. Ao receber a resposta, despache o Coach novamente (Despacho 2) → exiba feedback + próxima pergunta → aguarde resposta.
+3. Repita o processo até o Despacho 5 (última pergunta).
+4. No Despacho 6 → exiba feedback da última resposta, pontuação final e áreas de melhoria.
+5. Salve o resultado consolidado em `data/coach-results.md`.
+6. Retorne ao menu principal.
+
+O StackAdvisor controla o número do despacho e inclui o histórico completo de perguntas e respostas em cada novo despacho para que o Coach mantenha contexto.
 1. Saudação ao usuário.
 2. Verificar existência e completude de `data/project-quiz.md` (campo `Concluído`).
 3. Se inexistente ou incompleto → conduzir quiz passo a passo, marcar `Concluído: true`, gerar `data/project-profile.md`.
